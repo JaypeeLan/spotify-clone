@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { ChildrenProp } from "@/types";
 import { usePathname } from "next/navigation";
 import { HiHome } from "react-icons/hi";
@@ -14,7 +14,7 @@ const Sidebar: React.FC<ChildrenProp> = ({ children }) => {
   //   path hook
   const pathname = usePathname();
 
-  //   routes
+  // Initializing the routes array using useMemo to prevent unnecessary re-renders
   const routes = useMemo(
     () => [
       {
@@ -38,6 +38,7 @@ const Sidebar: React.FC<ChildrenProp> = ({ children }) => {
       <div className="hidden md:flex flex-col  gap-y-2 bg-black h-full w-[300px] p-2 ">
         <Box>
           <div className="flex flex-col gap-y-4 px-4 py-4">
+            {/* routes as SidebarItem components */}
             {routes.map((item) => (
               <SidebarItem key={item.label} {...item} />
             ))}

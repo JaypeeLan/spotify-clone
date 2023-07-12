@@ -58,6 +58,8 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             <RxCaretRight size={35} className="text-white" />
           </button>
         </div>
+        {/* -------------------------- */}
+        
         {/* show on only smaller screens */}
         <div className="flex md:hidden gap-x-2 items-center">
           <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition">
@@ -71,6 +73,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
 
         {/* sign in  and log in buttons */}
         <div className="flex justify-between items-center gap-x-4">
+          {/* show sign out button is the user is logged in only */}
           {user ? (
             <div className="flex gap-x-4 items-center">
               <Button onClick={handleLogout} className="bg-white px-6 py-2">

@@ -1,14 +1,16 @@
 "use client";
+import { useEffect } from "react";
+
 import {
   useSessionContext,
   useSupabaseClient,
 } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import { Auth } from "@supabase/auth-ui-react";
+
 import Modal from "./Modal";
 import useAuthModal from "@/hooks/useAuthModal";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { useEffect } from "react";
 
 const AuthModal = () => {
   const supabaseClient = useSupabaseClient();
@@ -16,6 +18,7 @@ const AuthModal = () => {
   const { session } = useSessionContext();
   const { onClose, isOpen } = useAuthModal();
 
+  //refresh the page and close the modal when a session is detected
   useEffect(() => {
     if (session) {
       router.refresh();

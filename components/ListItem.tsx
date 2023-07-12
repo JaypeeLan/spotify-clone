@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
-import { ListItemProps } from "@/types";
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+
+import { ListItemProps } from "@/types";
 
 import { FaPlay } from "react-icons/fa";
 

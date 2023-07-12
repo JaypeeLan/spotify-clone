@@ -1,6 +1,5 @@
-import { SidebarItemProps } from "@/types";
 import Link from "next/link";
-import React from "react";
+import { SidebarItemProps } from "@/types";
 import { twMerge } from "tailwind-merge";
 
 const SidebarItem: React.FC<SidebarItemProps> = ({

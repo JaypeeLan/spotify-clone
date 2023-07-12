@@ -21,6 +21,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
+// Setting the displayName of the Button component for debugging purposes
 Button.displayName = "Button";
 
 export default Button;
