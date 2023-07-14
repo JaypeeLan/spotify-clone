@@ -112,6 +112,10 @@ interface AuthModalStore {
   onClose: () => void;
 }
 
+interface UploadModalStore extends AuthModalStore {}
+
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+
 export {
   ChildrenProp,
   BoxProps,
@@ -129,4 +133,6 @@ export {
   UserProviderProps,
   ModalProps,
   AuthModalStore,
+  UploadModalStore,
+  InputProps,
 };
