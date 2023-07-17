@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { ChildrenProp } from "@/types";
+import { SidebarProps } from "@/types";
 import { usePathname } from "next/navigation";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/Bi";
@@ -10,7 +10,7 @@ import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 import Library from "./Library";
 
-const Sidebar: React.FC<ChildrenProp> = ({ children }) => {
+const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
   //   path hook
   const pathname = usePathname();
 
@@ -45,7 +45,7 @@ const Sidebar: React.FC<ChildrenProp> = ({ children }) => {
           </div>
         </Box>
         <Box className="overflow-y-auto h-full">
-          <Library />
+          <Library songs={songs} />
         </Box>
       </div>
       <main className="h-full flex-1 overflow-y-auto py-2">

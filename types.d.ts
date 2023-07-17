@@ -3,8 +3,12 @@ import { IconType } from "react-icons";
 import Stripe from "stripe";
 
 type ChildrenProp = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
+
+interface SidebarProps extends ChildrenProp {
+  songs: Songs[];
+}
 
 interface BoxProps extends ChildrenProp {
   className?: string;
@@ -116,8 +120,27 @@ interface UploadModalStore extends AuthModalStore {}
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
+interface LibraryProps extends ChildrenProp {
+  songs: Songs[];
+}
+
+interface Songs {
+  id: string;
+  user_id: string;
+  author: string;
+  title: string;
+  song_path: string;
+  image_path: string;
+}
+
+interface SongItem {
+  data: Songs;
+  onClick: (id: string) => void;
+}
+
 export {
   ChildrenProp,
+  SidebarProps,
   BoxProps,
   SidebarItemProps,
   HeaderProps,
@@ -135,4 +158,7 @@ export {
   AuthModalStore,
   UploadModalStore,
   InputProps,
+  LibraryProps,
+  Songs,
+  SongItem,
 };
